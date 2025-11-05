@@ -1,0 +1,17 @@
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/bin/Debug/net9.0/SVE.Infrastructure.deps.json
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/bin/Debug/net9.0/SVE.Infrastructure.runtimeconfig.json
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/bin/Debug/net9.0/SVE.Infrastructure.dll
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/bin/Debug/net9.0/SVE.Infrastructure.pdb
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/bin/Debug/net9.0/SVE.Application.dll
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/bin/Debug/net9.0/SVE.Domain.dll
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/bin/Debug/net9.0/SVE.Domain.pdb
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/bin/Debug/net9.0/SVE.Application.pdb
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/SVE.Infrastructure.csproj.AssemblyReference.cache
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/SVE.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/SVE.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/SVE.Infr.7BB4C3D1.Up2Date
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/SVE.Infrastructure.dll
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/refint/SVE.Infrastructure.dll
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/SVE.Infrastructure.pdb
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/SVE.Infrastructure.genruntimeconfig.cache
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/ref/SVE.Infrastructure.dll
