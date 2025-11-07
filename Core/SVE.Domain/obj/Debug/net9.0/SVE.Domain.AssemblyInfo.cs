@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SVE.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d4b3f15384c6dac6de4d7cfc220f66ea1cb075e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SVE.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SVE.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

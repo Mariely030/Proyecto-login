@@ -5,6 +5,7 @@
 /Users/rosse/Documents/SVE/Core/SVE.Domain/obj/Debug/net9.0/SVE.Domain.AssemblyInfoInputs.cache
 /Users/rosse/Documents/SVE/Core/SVE.Domain/obj/Debug/net9.0/SVE.Domain.AssemblyInfo.cs
 /Users/rosse/Documents/SVE/Core/SVE.Domain/obj/Debug/net9.0/SVE.Domain.csproj.CoreCompileInputs.cache
+/Users/rosse/Documents/SVE/Core/SVE.Domain/obj/Debug/net9.0/SVE.Domain.sourcelink.json
 /Users/rosse/Documents/SVE/Core/SVE.Domain/obj/Debug/net9.0/SVE.Domain.dll
 /Users/rosse/Documents/SVE/Core/SVE.Domain/obj/Debug/net9.0/refint/SVE.Domain.dll
 /Users/rosse/Documents/SVE/Core/SVE.Domain/obj/Debug/net9.0/SVE.Domain.pdb

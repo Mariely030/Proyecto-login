@@ -30,6 +30,7 @@
 /Users/rosse/Documents/SVE/SVE.Persistence/obj/Debug/net9.0/SVE.Persistence.AssemblyInfoInputs.cache
 /Users/rosse/Documents/SVE/SVE.Persistence/obj/Debug/net9.0/SVE.Persistence.AssemblyInfo.cs
 /Users/rosse/Documents/SVE/SVE.Persistence/obj/Debug/net9.0/SVE.Persistence.csproj.CoreCompileInputs.cache
+/Users/rosse/Documents/SVE/SVE.Persistence/obj/Debug/net9.0/SVE.Persistence.sourcelink.json
 /Users/rosse/Documents/SVE/SVE.Persistence/obj/Debug/net9.0/SVE.Pers.F52ECB56.Up2Date
 /Users/rosse/Documents/SVE/SVE.Persistence/obj/Debug/net9.0/SVE.Persistence.dll
 /Users/rosse/Documents/SVE/SVE.Persistence/obj/Debug/net9.0/refint/SVE.Persistence.dll

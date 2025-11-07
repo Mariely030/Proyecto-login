@@ -97,6 +97,7 @@
 /Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/SVE.Web.MvcApplicationPartsAssemblyInfo.cache
 /Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/SVE.Web.RazorAssemblyInfo.cache
 /Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/SVE.Web.RazorAssemblyInfo.cs
+/Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/SVE.Web.sourcelink.json
 /Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/rjimswa.dswa.cache.json
 /Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/rjsmrazor.dswa.cache.json
 /Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json

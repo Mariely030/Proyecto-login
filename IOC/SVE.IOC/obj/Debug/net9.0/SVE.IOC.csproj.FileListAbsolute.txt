@@ -14,6 +14,7 @@
 /Users/rosse/Documents/SVE/IOC/SVE.IOC/obj/Debug/net9.0/SVE.IOC.AssemblyInfoInputs.cache
 /Users/rosse/Documents/SVE/IOC/SVE.IOC/obj/Debug/net9.0/SVE.IOC.AssemblyInfo.cs
 /Users/rosse/Documents/SVE/IOC/SVE.IOC/obj/Debug/net9.0/SVE.IOC.csproj.CoreCompileInputs.cache
+/Users/rosse/Documents/SVE/IOC/SVE.IOC/obj/Debug/net9.0/SVE.IOC.sourcelink.json
 /Users/rosse/Documents/SVE/IOC/SVE.IOC/obj/Debug/net9.0/SVE.IOC.csproj.Up2Date
 /Users/rosse/Documents/SVE/IOC/SVE.IOC/obj/Debug/net9.0/SVE.IOC.dll
 /Users/rosse/Documents/SVE/IOC/SVE.IOC/obj/Debug/net9.0/refint/SVE.IOC.dll

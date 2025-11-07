@@ -182,6 +182,7 @@
 /Users/rosse/Documents/SVE/API/SVE.Api/obj/Debug/net9.0/SVE.Api.csproj.CoreCompileInputs.cache
 /Users/rosse/Documents/SVE/API/SVE.Api/obj/Debug/net9.0/SVE.Api.MvcApplicationPartsAssemblyInfo.cs
 /Users/rosse/Documents/SVE/API/SVE.Api/obj/Debug/net9.0/SVE.Api.MvcApplicationPartsAssemblyInfo.cache
+/Users/rosse/Documents/SVE/API/SVE.Api/obj/Debug/net9.0/SVE.Api.sourcelink.json
 /Users/rosse/Documents/SVE/API/SVE.Api/obj/Debug/net9.0/rjimswa.dswa.cache.json
 /Users/rosse/Documents/SVE/API/SVE.Api/obj/Debug/net9.0/rjsmrazor.dswa.cache.json
 /Users/rosse/Documents/SVE/API/SVE.Api/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json

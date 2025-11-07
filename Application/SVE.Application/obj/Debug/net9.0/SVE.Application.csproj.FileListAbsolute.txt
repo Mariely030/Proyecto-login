@@ -8,6 +8,7 @@
 /Users/rosse/Documents/SVE/Application/SVE.Application/obj/Debug/net9.0/SVE.Application.AssemblyInfoInputs.cache
 /Users/rosse/Documents/SVE/Application/SVE.Application/obj/Debug/net9.0/SVE.Application.AssemblyInfo.cs
 /Users/rosse/Documents/SVE/Application/SVE.Application/obj/Debug/net9.0/SVE.Application.csproj.CoreCompileInputs.cache
+/Users/rosse/Documents/SVE/Application/SVE.Application/obj/Debug/net9.0/SVE.Application.sourcelink.json
 /Users/rosse/Documents/SVE/Application/SVE.Application/obj/Debug/net9.0/SVE.Appl.21106655.Up2Date
 /Users/rosse/Documents/SVE/Application/SVE.Application/obj/Debug/net9.0/SVE.Application.dll
 /Users/rosse/Documents/SVE/Application/SVE.Application/obj/Debug/net9.0/refint/SVE.Application.dll

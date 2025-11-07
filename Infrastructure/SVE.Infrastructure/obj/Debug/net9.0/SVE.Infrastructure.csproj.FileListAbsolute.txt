@@ -9,6 +9,7 @@
 /Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/SVE.Infrastructure.csproj.AssemblyReference.cache
 /Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/SVE.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 /Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/SVE.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/SVE.Infrastructure.sourcelink.json
 /Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/SVE.Infr.7BB4C3D1.Up2Date
 /Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/SVE.Infrastructure.dll
 /Users/rosse/Documents/SVE/Infrastructure/SVE.Infrastructure/obj/Debug/net9.0/refint/SVE.Infrastructure.dll

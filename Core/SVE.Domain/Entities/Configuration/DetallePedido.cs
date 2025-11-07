@@ -8,6 +8,7 @@ namespace SVE.Domain.Entities.Configuration
         public Pedido Pedido { get; set; } = null!;
         public int ProductoId { get; set; }
         public Producto Producto { get; set; } = null!;
+        public int PromocionId { get; set; }
         public Promocion Promocion { get; set; } = null!;
         public int Cantidad { get; set; }
         public decimal PrecioUnitario { get; set; }

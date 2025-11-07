@@ -4,14 +4,83 @@
     "/Users/rosse/Documents/SVE/Test/SVE.Application.Test/SVE.Application.Test.csproj": {}
   },
   "projects": {
-    "/Users/rosse/Documents/SVE/Test/SVE.Application.Test/SVE.Application.Test.csproj": {
+    "/Users/rosse/Documents/SVE/Application/SVE.Application/SVE.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rosse/Documents/SVE/Test/SVE.Application.Test/SVE.Application.Test.csproj",
-        "projectName": "SVE.Application.Test",
-        "projectPath": "/Users/rosse/Documents/SVE/Test/SVE.Application.Test/SVE.Application.Test.csproj",
+        "projectUniqueName": "/Users/rosse/Documents/SVE/Application/SVE.Application/SVE.Application.csproj",
+        "projectName": "SVE.Application",
+        "projectPath": "/Users/rosse/Documents/SVE/Application/SVE.Application/SVE.Application.csproj",
         "packagesPath": "/Users/rosse/.nuget/packages/",
-        "outputPath": "/Users/rosse/Documents/SVE/Test/SVE.Application.Test/obj/",
+        "outputPath": "/Users/rosse/Documents/SVE/Application/SVE.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/rosse/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/rosse/Documents/SVE/Core/SVE.Domain/SVE.Domain.csproj": {
+                "projectPath": "/Users/rosse/Documents/SVE/Core/SVE.Domain/SVE.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/rosse/Documents/SVE/Core/SVE.Domain/SVE.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rosse/Documents/SVE/Core/SVE.Domain/SVE.Domain.csproj",
+        "projectName": "SVE.Domain",
+        "projectPath": "/Users/rosse/Documents/SVE/Core/SVE.Domain/SVE.Domain.csproj",
+        "packagesPath": "/Users/rosse/.nuget/packages/",
+        "outputPath": "/Users/rosse/Documents/SVE/Core/SVE.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rosse/.nuget/NuGet/NuGet.Config"
@@ -43,22 +112,185 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/rosse/Documents/SVE/SVE.Persistence/SVE.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rosse/Documents/SVE/SVE.Persistence/SVE.Persistence.csproj",
+        "projectName": "SVE.Persistence",
+        "projectPath": "/Users/rosse/Documents/SVE/SVE.Persistence/SVE.Persistence.csproj",
+        "packagesPath": "/Users/rosse/.nuget/packages/",
+        "outputPath": "/Users/rosse/Documents/SVE/SVE.Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/rosse/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/rosse/Documents/SVE/Application/SVE.Application/SVE.Application.csproj": {
+                "projectPath": "/Users/rosse/Documents/SVE/Application/SVE.Application/SVE.Application.csproj"
+              },
+              "/Users/rosse/Documents/SVE/Core/SVE.Domain/SVE.Domain.csproj": {
+                "projectPath": "/Users/rosse/Documents/SVE/Core/SVE.Domain/SVE.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
-            "MSTest.TestAdapter": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[9.0.0, )"
             },
-            "MSTest.TestFramework": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[9.0.0, )"
             },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.5.0, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/rosse/Documents/SVE/Test/SVE.Application.Test/SVE.Application.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rosse/Documents/SVE/Test/SVE.Application.Test/SVE.Application.Test.csproj",
+        "projectName": "SVE.Application.Test",
+        "projectPath": "/Users/rosse/Documents/SVE/Test/SVE.Application.Test/SVE.Application.Test.csproj",
+        "packagesPath": "/Users/rosse/.nuget/packages/",
+        "outputPath": "/Users/rosse/Documents/SVE/Test/SVE.Application.Test/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/rosse/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/rosse/Documents/SVE/Application/SVE.Application/SVE.Application.csproj": {
+                "projectPath": "/Users/rosse/Documents/SVE/Application/SVE.Application/SVE.Application.csproj"
+              },
+              "/Users/rosse/Documents/SVE/Core/SVE.Domain/SVE.Domain.csproj": {
+                "projectPath": "/Users/rosse/Documents/SVE/Core/SVE.Domain/SVE.Domain.csproj"
+              },
+              "/Users/rosse/Documents/SVE/SVE.Persistence/SVE.Persistence.csproj": {
+                "projectPath": "/Users/rosse/Documents/SVE/SVE.Persistence/SVE.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.8.0, )"
+              "version": "[17.10.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
             },
             "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.8.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.8.0, )"
             }
           },
           "imports": [
