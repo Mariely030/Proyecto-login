@@ -1,4 +1,4 @@
-using SVE.Application.Dtos;
+using SVE.Application.Dtos.Configuration;
 using SVE.Application.Interfaces;
 using SVE.Application.Base;
 using SVE.Domain.Entities.Configuration;
@@ -38,8 +38,16 @@ namespace SVE.Application.Services
             try
             {
                 var pedido = await _pedidoRepository.GetByIdAsync(id);
-                result.Success = true;
-                result.Data = pedido;
+                if (pedido == null)
+                {
+                    result.Success = false;
+                    result.Message = "Pedido no encontrado";
+                }
+                else
+                {
+                    result.Success = true;
+                    result.Data = pedido;
+                }
             }
             catch (Exception ex)
             {
@@ -63,8 +71,12 @@ namespace SVE.Application.Services
                 };
 
                 await _pedidoRepository.AddAsync(pedido);
+                await _pedidoRepository.SaveChangesAsync();
+
+                await _pedidoRepository.AddAsync(pedido);
                 result.Success = true;
                 result.Message = "Pedido creado correctamente";
+                result.Data = pedido;
             }
             catch (Exception ex)
             {
@@ -89,10 +101,15 @@ namespace SVE.Application.Services
 
                 pedido.Fecha = dto.Fecha;
                 pedido.Total = dto.Total;
+                pedido.Estado = dto.Estado;
+
+                _pedidoRepository.Update(pedido);
+                await _pedidoRepository.SaveChangesAsync();
 
                 _pedidoRepository.Update(pedido);
                 result.Success = true;
                 result.Message = "Pedido actualizado correctamente";
+                result.Data = pedido;
             }
             catch (Exception ex)
             {
@@ -116,8 +133,12 @@ namespace SVE.Application.Services
                 }
 
                 _pedidoRepository.Delete(pedido);
+                await _pedidoRepository.SaveChangesAsync();
+
+                _pedidoRepository.Delete(pedido);
                 result.Success = true;
                 result.Message = "Pedido eliminado correctamente";
+                result.Data = pedido;
             }
             catch (Exception ex)
             {

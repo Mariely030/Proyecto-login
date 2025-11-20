@@ -1,4 +1,4 @@
-using SVE.Application.Dtos;
+using SVE.Application.Dtos.Configuration;
 using SVE.Application.Interfaces;
 using SVE.Application.Base;
 using SVE.Domain.Entities.Configuration;
@@ -38,8 +38,16 @@ namespace SVE.Application.Services
             try
             {
                 var producto = await _productoRepository.GetByIdAsync(id);
-                result.Success = true;
-                result.Data = producto;
+                if (producto == null)
+                {
+                    result.Success = false;
+                    result.Message = "Producto no encontrado";
+                }
+                else
+                {
+                    result.Success = true;
+                    result.Data = producto;
+                }
             }
             catch (Exception ex)
             {
@@ -50,81 +58,91 @@ namespace SVE.Application.Services
         }
 
         public async Task<ServiceResult> CreateProducto(CreateProductoDto dto)
+{
+    var result = new ServiceResult();
+    try
+    {
+        var producto = new Producto
         {
-            var result = new ServiceResult();
-            try
-            {
-                var producto = new Producto
-                {
-                    Nombre = dto.Nombre,
-                    Precio = dto.Precio,
-                    Categoria = dto.Categoria
-                };
+            Nombre = dto.Nombre,
+            Precio = dto.Precio,
+            Categoria = dto.Categoria
+        };
 
-                await _productoRepository.AddAsync(producto);
-                result.Success = true;
-                result.Message = "Producto creado correctamente";
-            }
-            catch (Exception ex)
-            {
-                result.Success = false;
-                result.Message = ex.Message;
-            }
+        await _productoRepository.AddAsync(producto);
+        await _productoRepository.SaveChangesAsync(); // <-- guardar en DB
+
+        result.Success = true;
+        result.Message = "Producto creado correctamente";
+        result.Data = producto;
+    }
+    catch (Exception ex)
+    {
+        result.Success = false;
+        result.Message = ex.Message;
+    }
+    return result;
+}
+
+public async Task<ServiceResult> UpdateProducto(UpdateProductoDto dto)
+{
+    var result = new ServiceResult();
+    try
+    {
+        var producto = await _productoRepository.GetByIdAsync(dto.Id);
+        if (producto == null)
+        {
+            result.Success = false;
+            result.Message = "Producto no encontrado";
             return result;
         }
 
-        public async Task<ServiceResult> UpdateProducto(UpdateProductoDto dto)
+        producto.Nombre = dto.Nombre;
+        producto.Precio = dto.Precio;
+        producto.Categoria = dto.Categoria;
+
+        _productoRepository.Update(producto);
+        await _productoRepository.SaveChangesAsync(); // <-- guardar cambios
+
+        result.Success = true;
+        result.Message = "Producto actualizado correctamente";
+        result.Data = producto;
+    }
+    catch (Exception ex)
+    {
+        result.Success = false;
+        result.Message = ex.Message;
+    }
+    return result;
+}
+
+public async Task<ServiceResult> RemoveProducto(RemoveProductoDto dto)
+{
+    var result = new ServiceResult();
+    try
+    {
+        var producto = await _productoRepository.GetByIdAsync(dto.Id);
+        if (producto == null)
         {
-            var result = new ServiceResult();
-            try
-            {
-                var producto = await _productoRepository.GetByIdAsync(dto.Id);
-                if (producto == null)
-                {
-                    result.Success = false;
-                    result.Message = "Producto no encontrado";
-                    return result;
-                }
-
-                producto.Nombre = dto.Nombre;
-                producto.Precio = dto.Precio;
-                producto.Categoria = dto.Categoria;
-
-                _productoRepository.Update(producto);
-                result.Success = true;
-                result.Message = "Producto actualizado correctamente";
-            }
-            catch (Exception ex)
-            {
-                result.Success = false;
-                result.Message = ex.Message;
-            }
+            result.Success = false;
+            result.Message = "Producto no encontrado";
             return result;
         }
 
-        public async Task<ServiceResult> RemoveProducto(RemoveProductoDto dto)
-        {
-            var result = new ServiceResult();
-            try
-            {
-                var producto = await _productoRepository.GetByIdAsync(dto.Id);
-                if (producto == null)
-                {
-                    result.Success = false;
-                    result.Message = "Producto no encontrado";
-                    return result;
-                }
+        _productoRepository.Delete(producto);
+        await _productoRepository.SaveChangesAsync(); // <-- guardar cambios
 
-                _productoRepository.Delete(producto);
-                result.Success = true;
-                result.Message = "Producto eliminado correctamente";
-            }
-            catch (Exception ex)
-            {
-                result.Success = false;
-                result.Message = ex.Message;
-            }
-            return result;
-        }
+        result.Success = true;
+        result.Message = "Producto eliminado correctamente";
+        result.Data = producto;
+    }
+    catch (Exception ex)
+    {
+        result.Success = false;
+        result.Message = ex.Message;
+    }
+    return result;
+}
+
     }
 }

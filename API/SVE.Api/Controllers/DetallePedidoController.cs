@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SVE.Application.Contracts.Repositories;
-using SVE.Application.Dtos;
+using SVE.Application.Dtos.Configuration;
 using SVE.Domain.Entities.Configuration;
 
 namespace SVE.API.Controllers
@@ -96,3 +96,4 @@ if (!ModelState.IsValid)
         }
     }
 }
+ 

@@ -1,9 +1,8 @@
-using SVE.Application.Dtos;
+using SVE.Application.Dtos.Configuration;
 using SVE.Application.Interfaces;
 using SVE.Application.Base;
 using SVE.Domain.Entities.Configuration;
 using SVE.Application.Contracts.Repositories;
-
 
 namespace SVE.Application.Services
 {
@@ -39,8 +38,9 @@ namespace SVE.Application.Services
             try
             {
                 var usuario = await _usuarioRepository.GetByIdAsync(id);
-                result.Success = true;
+                result.Success = usuario != null;
                 result.Data = usuario;
+                if (usuario == null) result.Message = "Usuario no encontrado";
             }
             catch (Exception ex)
             {
@@ -63,8 +63,11 @@ namespace SVE.Application.Services
                 };
 
                 await _usuarioRepository.AddAsync(usuario);
+                await _usuarioRepository.SaveChangesAsync(); // <--- guarda en la base de datos
+
                 result.Success = true;
                 result.Message = "Usuario creado correctamente";
+                result.Data = usuario;
             }
             catch (Exception ex)
             {
@@ -92,8 +95,11 @@ namespace SVE.Application.Services
                 usuario.Rol = dto.Rol;
 
                 _usuarioRepository.Update(usuario);
+                await _usuarioRepository.SaveChangesAsync(); // <--- guarda cambios
+
                 result.Success = true;
                 result.Message = "Usuario actualizado correctamente";
+                result.Data = usuario;
             }
             catch (Exception ex)
             {
@@ -117,8 +123,11 @@ namespace SVE.Application.Services
                 }
 
                 _usuarioRepository.Delete(usuario);
+                await _usuarioRepository.SaveChangesAsync(); // <--- elimina de la base de datos
+
                 result.Success = true;
                 result.Message = "Usuario eliminado correctamente";
+                result.Data = usuario;
             }
             catch (Exception ex)
             {
@@ -129,5 +138,10 @@ namespace SVE.Application.Services
         }
     }
 }
+
+
+
+
+
 
 

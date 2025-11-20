@@ -1,0 +1,29 @@
+@model List<SVE.Application.Dtos.Configuration.ReadProductoDto>
+
+<h2>Productos</h2>
+<p><a asp-action="Create" class="btn btn-primary">Crear Nuevo Producto</a></p>
+
+<table class="table">
+    <thead>
+        <tr><th>Id</th><th>Nombre</th><th>Precio</th><th>Categoria</th><th>Acciones</th></tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Nombre</td>
+                <td>@p.Precio</td>
+                <td>@p.Categoria</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@p.Id" class="btn btn-warning btn-sm">Editar</a>
+                    <form asp-action="Delete" method="post" style="display:inline;">
+                        <input type="hidden" name="Id" value="@p.Id" />
+                        <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+ 

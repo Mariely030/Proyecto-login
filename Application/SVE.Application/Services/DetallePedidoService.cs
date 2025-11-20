@@ -1,4 +1,4 @@
-using SVE.Application.Dtos;
+using SVE.Application.Dtos.Configuration;
 using SVE.Application.Interfaces;
 using SVE.Application.Base;
 using SVE.Domain.Entities.Configuration;
@@ -38,8 +38,16 @@ namespace SVE.Application.Services
             try
             {
                 var detalle = await _detallePedidoRepository.GetByIdAsync(id);
-                result.Success = true;
-                result.Data = detalle;
+                if (detalle == null)
+                {
+                    result.Success = false;
+                    result.Message = "Detalle de pedido no encontrado";
+                }
+                else
+                {
+                    result.Success = true;
+                    result.Data = detalle;
+                }
             }
             catch (Exception ex)
             {
@@ -58,13 +66,17 @@ namespace SVE.Application.Services
                 {
                     PedidoId = dto.PedidoId,
                     ProductoId = dto.ProductoId,
+                    PromocionId = dto.PromocionId,
                     Cantidad = dto.Cantidad,
                     PrecioUnitario = dto.PrecioUnitario
                 };
 
                 await _detallePedidoRepository.AddAsync(detalle);
+                await _detallePedidoRepository.SaveChangesAsync();
+
                 result.Success = true;
                 result.Message = "Detalle de pedido creado correctamente";
+                result.Data = detalle;
             }
             catch (Exception ex)
             {
@@ -88,11 +100,15 @@ namespace SVE.Application.Services
                 }
 
                 detalle.Cantidad = dto.Cantidad;
-                detalle.PrecioUnitario = dto.PrecioUnitario;
+                detalle.PrecioUnitario = dto.PrecioUnitario; 
 
                 _detallePedidoRepository.Update(detalle);
+                await _detallePedidoRepository.SaveChangesAsync(); // <-- guardar cambios
+
+
                 result.Success = true;
                 result.Message = "Detalle de pedido actualizado correctamente";
+                result.Data = detalle;
             }
             catch (Exception ex)
             {
@@ -116,8 +132,12 @@ namespace SVE.Application.Services
                 }
 
                 _detallePedidoRepository.Delete(detalle);
+                await _detallePedidoRepository.SaveChangesAsync(); 
+
+                _detallePedidoRepository.Delete(detalle);
                 result.Success = true;
                 result.Message = "Detalle de pedido eliminado correctamente";
+                result.Data = detalle;
             }
             catch (Exception ex)
             {

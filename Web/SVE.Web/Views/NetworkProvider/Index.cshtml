@@ -1,0 +1,46 @@
+@model List<SVE.Application.Dtos.Network.NetworkProvider.GetNetworkProviderDtos>
+
+@{
+    ViewData["Title"] = "Network Providers";
+}
+
+<h2>Network Providers</h2>
+
+<a asp-controller="NetworkProvider" asp-action="Create" class="btn btn-primary mb-3">
+    Crear Nuevo Network Provider
+</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Fecha Creación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nombre</td>
+                <td>@item.NetworkTypeName</td>
+                <td>@item.CreateAt?.ToString("yyyy-MM-dd")</td>
+
+                <td>
+                    <a asp-controller="NetworkProvider" asp-action="Edit" asp-route-id="@item.Id"
+                       class="btn btn-warning btn-sm">Editar</a>
+
+                    <a asp-controller="NetworkProvider" asp-action="Disable" asp-route-id="@item.Id"
+                       class="btn btn-danger btn-sm">Eliminar</a>
+
+                    <a asp-action="Details" asp-route-id="@item.Id" 
+                    class="btn btn-info btn-sm">Detalles</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,8 +1,5 @@
 
 using SVE.IOC;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using SVE.Persistence.Context;
 

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using SVE.Application.Contracts.Repositories.Insurance;
-using SVE.Application.Dtos.Insurance.NetworkType;
+using SVE.Application.Contracts.Repositories.Network;
+using SVE.Application.Dtos.Network.NetworkType;
 
 namespace SVE.API.Controllers
 {

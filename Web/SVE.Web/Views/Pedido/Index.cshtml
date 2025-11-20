@@ -1,0 +1,37 @@
+@model List<SVE.Application.Dtos.Configuration.ReadPedidoDto>
+
+<h2>Pedidos</h2>
+<p><a asp-action="Create" class="btn btn-primary">Crear Nuevo Pedido</a></p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Usuario Id</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Total</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model)
+        {
+            <tr>
+                <td>@p.UsuarioId</td>
+                <td>@p.Fecha.ToShortDateString()</td>
+                <td>@p.Estado</td>
+                <td>@p.Total</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@p.Id" class="btn btn-sm btn-warning">Editar</a>
+                    <form asp-action="Delete" method="post" style="display:inline;">
+                        <input type="hidden" name="Id" value="@p.Id" />
+                        <input type="hidden" name="Fecha" value="@p.Fecha" />
+                        <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+ 

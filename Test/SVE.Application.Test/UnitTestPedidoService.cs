@@ -3,7 +3,7 @@ using Moq;
 using SVE.Application.Services;
 using SVE.Application.Contracts.Repositories;
 using SVE.Domain.Entities.Configuration;
-using SVE.Application.Dtos;
+using SVE.Application.Dtos.Configuration;
 
 namespace SVE.Application.Test
 {

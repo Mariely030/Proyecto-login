@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SVE.Domain.Entities.Configuration;
-using SVE.Domain.Entities.Insurance;
+using SVE.Domain.Entities.Network;
 
 
 namespace SVE.Persistence.Context
@@ -20,8 +20,6 @@ namespace SVE.Persistence.Context
             public DbSet<Pedido> Pedidos { get; set; }
             public DbSet<DetallePedido> DetallePedidos { get; set; }
             public DbSet<NetworkType> NetworkTypes { get; set; }
-
-        
-        
+            public DbSet<NetworkProvider> NetworkProvider { get; set; }
     }
 }

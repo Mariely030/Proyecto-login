@@ -1,4 +1,4 @@
-using SVE.Application.Dtos;
+using SVE.Application.Dtos.Configuration;
 using SVE.Application.Base;
 
 namespace SVE.Application.Interfaces

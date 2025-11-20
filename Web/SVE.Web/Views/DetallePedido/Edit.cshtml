@@ -1,0 +1,28 @@
+@model SVE.Application.Dtos.Configuration.UpdateDetallePedidoDto
+
+<h2>Editar Detalle de Pedido</h2>
+<form asp-action="Edit" method="post">
+<input type="hidden" asp-for="Id" />
+    <div>
+        <label>Promoción Id</label>
+        <input asp-for="PromocionId" class="form-control" />
+    </div>
+    <div>
+        <label>Pedido Id</label>
+        <input asp-for="PedidoId" class="form-control" />
+    </div>
+    <div>
+        <label>Producto Id</label>
+        <input asp-for="ProductoId" class="form-control" />
+    </div>
+    <div>
+        <label>Cantidad</label>
+        <input asp-for="Cantidad" class="form-control" />
+    </div>
+    <div>
+        <label>Precio Unitario</label>
+        <input asp-for="PrecioUnitario" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

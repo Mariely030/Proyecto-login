@@ -1,0 +1,21 @@
+@model SVE.Application.Dtos.Configuration.UpdateProductoDto
+
+<h2>Editar Producto</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+   <div>
+        <label>Nombre</label>
+        <input asp-for="Nombre" class="form-control" />
+    </div>
+    <div>
+        <label>Precio</label>
+        <input asp-for="Precio" class="form-control" />
+    </div>
+    <div>
+        <label>Categoria</label>
+        <input asp-for="Categoria" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+ 

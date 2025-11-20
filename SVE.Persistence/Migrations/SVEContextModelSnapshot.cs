@@ -30,8 +30,8 @@ namespace SVE.Persistence.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Cantidad")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Cantidad")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime?>("FechaActualizacion")
                         .HasColumnType("datetime(6)");
@@ -43,7 +43,7 @@ namespace SVE.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("PrecioUnitario")
-                        .HasColumnType("decimal(65,30)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProductoId")
                         .HasColumnType("int");
@@ -84,7 +84,7 @@ namespace SVE.Persistence.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<decimal>("Total")
-                        .HasColumnType("decimal(65,30)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");
@@ -117,7 +117,7 @@ namespace SVE.Persistence.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<decimal>("Precio")
-                        .HasColumnType("decimal(65,30)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -140,7 +140,7 @@ namespace SVE.Persistence.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<decimal>("Descuento")
-                        .HasColumnType("decimal(65,30)");
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<DateTime?>("FechaActualizacion")
                         .HasColumnType("datetime(6)");
@@ -184,7 +184,41 @@ namespace SVE.Persistence.Migrations
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("SVE.Domain.Entities.Insurance.NetworkType", b =>
+            modelBuilder.Entity("SVE.Domain.Entities.Network.NetworkProvider", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("NetworkTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NetworkTypeId");
+
+                    b.ToTable("NetworkProvider");
+                });
+
+            modelBuilder.Entity("SVE.Domain.Entities.Network.NetworkType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -238,6 +272,17 @@ namespace SVE.Persistence.Migrations
                     b.Navigation("Producto");
 
                     b.Navigation("Promocion");
+                });
+
+            modelBuilder.Entity("SVE.Domain.Entities.Network.NetworkProvider", b =>
+                {
+                    b.HasOne("SVE.Domain.Entities.Network.NetworkType", "NetworkType")
+                        .WithMany()
+                        .HasForeignKey("NetworkTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("NetworkType");
                 });
 #pragma warning restore 612, 618
         }

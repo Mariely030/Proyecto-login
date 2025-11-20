@@ -37,10 +37,14 @@
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
+/Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Microsoft.OpenApi.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Microsoft.SqlServer.Server.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/MySql.Data.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/MySqlConnector.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/System.ClientModel.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/System.Configuration.ConfigurationManager.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/System.Diagnostics.EventLog.dll
@@ -94,6 +98,7 @@
 /Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/SVE.Web.AssemblyInfoInputs.cache
 /Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/SVE.Web.AssemblyInfo.cs
 /Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/SVE.Web.csproj.CoreCompileInputs.cache
+/Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/SVE.Web.MvcApplicationPartsAssemblyInfo.cs
 /Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/SVE.Web.MvcApplicationPartsAssemblyInfo.cache
 /Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/SVE.Web.RazorAssemblyInfo.cache
 /Users/rosse/Documents/SVE/Web/SVE.Web/obj/Debug/net9.0/SVE.Web.RazorAssemblyInfo.cs

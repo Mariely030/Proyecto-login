@@ -1,0 +1,18 @@
+@model SVE.Application.Dtos.Network.NetworkType.GetNetworkTypeDtos
+
+@{
+    ViewData["Title"] = "Detalles del Tipo de Red";
+}
+
+<h2>Detalles del Tipo de Red</h2>
+
+<div class="card p-3 mb-3">
+    <p><strong>Id:</strong> @Model.Id</p>
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+    <p><strong>Descripción:</strong> @Model.Descripcion</p>
+    <p><strong>Fecha de Creación:</strong> @Model.CreateAt?.ToString("yyyy-MM-dd")</p>
+    <p><strong>Última Actualización:</strong> @Model.UpdateAt?.ToString("yyyy-MM-dd")</p>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Volver</a>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>

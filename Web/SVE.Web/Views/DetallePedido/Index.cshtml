@@ -1,0 +1,38 @@
+@model List<SVE.Application.Dtos.Configuration.ReadDetallePedidoDto>
+
+<h2>Detalles de Pedidos</h2>
+<p><a asp-action="Create" class="btn btn-primary">Crear Nuevo Detalle de Pedido</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Promoción Id</th>
+            <th>Pedido Id</th>
+            <th>Producto Id</th>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var d in Model)
+        {
+            <tr>
+                <td>@d.Id</td>
+                <td>@d.PromocionId</td>
+                <td>@d.PedidoId</td>
+                <td>@d.ProductoId</td>
+                <td>@d.Cantidad</td>
+                <td>@d.PrecioUnitario</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@d.Id" class="btn btn-warning btn-sm">Editar</a>
+                    <form asp-action="Delete" method="post" style="display:inline;">
+                        <input type="hidden" name="Id" value="@d.Id" />
+                        <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+@model SVE.Application.Dtos.Network.NetworkProvider.CreateNetworkProviderDtos
+
+@{
+    ViewData["Title"] = "Crear Network Provider";
+}
+
+<h2>Crear Network Provider</h2>
+
+<form asp-action="Create" method="post">
+
+    <div class="form-group mb-2">
+        <label>Nombre</label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-2">
+        <label>Descripcion</label>
+        <select asp-for="NetworkTypeId" asp-items="ViewBag.NetworkTypes" class="form-control">
+            <option value="">Seleccione...</option>
+        </select>
+        <span asp-validation-for="NetworkTypeId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-2">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary mt-2">Cancelar</a>
+
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

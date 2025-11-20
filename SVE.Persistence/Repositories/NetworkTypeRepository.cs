@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using SVE.Application.Contracts.Repositories.Insurance;
-using SVE.Application.Dtos.Insurance.NetworkType;
+using SVE.Application.Contracts.Repositories.Network;
+using SVE.Application.Dtos.Network.NetworkType;
 using SVE.Domain.Base;
-using SVE.Domain.Entities.Insurance;
+using SVE.Domain.Entities.Network;
 using SVE.Persistence.Context;
 
 namespace SVE.Persistence.Repositories

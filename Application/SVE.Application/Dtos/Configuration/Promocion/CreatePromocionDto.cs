@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
 
-namespace SVE.Application.Dtos
+namespace SVE.Application.Dtos.Configuration
 {
     public class CreatePromocionDto
     {
