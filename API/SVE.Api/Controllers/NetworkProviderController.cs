@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SVE.Application.Contracts.Services.Network;
 using SVE.Application.Dtos.Network.NetworkProvider;
+using SVE.Application.Common;
 
 namespace SVE.API.Controllers
 {
@@ -30,30 +31,51 @@ namespace SVE.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateNetworkProviderDtos dto)
-        {
-            var result = await _service.AddAsync(dto);
-            return Ok(result);
-        }
+public async Task<IActionResult> Create(CreateNetworkProviderDtos dto)
+{
+    var result = await _service.AddAsync(dto);
 
-        [HttpPut]
-        public async Task<IActionResult> Update(ModifyNetworkProviderDtos dto)
-        {
-            var result = await _service.UpdateAsync(dto);
-            return Ok(result);
-        }
+    return Ok(new ApiResponse<bool>
+    {
+        Success = result.Success,
+        Message = result.Message,
+        Data = result.Success
+    });
+}
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Disable(int id)
-        {
-            var dto = new DisableNetworkProviderDtos
-            {
-                Id = id,
-                UpdateAt = DateTime.UtcNow
-            };
 
-            var result = await _service.DeleteAsync(dto);
-            return Ok(result);
-        }
+       [HttpPut]
+public async Task<IActionResult> Update(ModifyNetworkProviderDtos dto)
+{
+    var result = await _service.UpdateAsync(dto);
+
+    return Ok(new ApiResponse<bool>
+    {
+        Success = result.Success,
+        Message = result.Message,
+        Data = result.Success
+    });
+}
+
+
+       [HttpDelete("{id}")]
+public async Task<IActionResult> Disable(int id)
+{
+    var dto = new DisableNetworkProviderDtos
+    {
+        Id = id,
+        UpdateAt = DateTime.UtcNow
+    };
+
+    var result = await _service.DeleteAsync(dto);
+
+    return Ok(new ApiResponse<bool>
+    {
+        Success = result.Success,
+        Message = result.Message,
+        Data = result.Success
+    });
+}
+
     }
 }

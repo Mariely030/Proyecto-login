@@ -75,26 +75,48 @@ namespace SVE.Persistence.Repositories
 
 
         public async Task<OperationResult> GetByIdAsync(int id)
-        {
-            var entity = await _context.NetworkTypes.FirstOrDefaultAsync(x => x.Id == id);
-            return new OperationResult
-            {
-                Success = entity != null,
-                Data = entity,
-                Message = entity == null ? "Tipo de red no encontrado" : "Tipo de red encontrado"
-            };
-        }
+{
+    var entity = await _context.NetworkTypes.FirstOrDefaultAsync(x => x.Id == id);
 
-        public async Task<OperationResult> GetAllAsync()
+    if (entity == null)
+        return new OperationResult { Success = false, Message = "No encontrado" };
+
+    return new OperationResult
+    {
+        Success = true,
+        Data = new GetNetworkTypeDtos
         {
-            var list = await _context.NetworkTypes.Where(x => x.Estado).ToListAsync();
-            return new OperationResult
-            {
-                Success = true,
-                Data = list
-            };
+            Id = entity.Id,
+            Nombre = entity.Nombre,
+            Descripcion = entity.Descripcion,
+            CreateAt = entity.CreateAt,
+            UpdateAt = entity.UpdateAt,
+            Estado = entity.Estado
         }
-    }
+    };
 }
 
-        
+        public async Task<OperationResult> GetAllAsync()
+{
+    var list = await _context.NetworkTypes
+        .Where(x => x.Estado)
+        .Select(x => new GetNetworkTypeDtos
+        {
+            Id = x.Id,
+            Nombre = x.Nombre,
+            Descripcion = x.Descripcion,
+            CreateAt = x.CreateAt,
+            UpdateAt = x.UpdateAt,
+            Estado = x.Estado
+        })
+        .ToListAsync();
+
+    return new OperationResult
+    {
+        Success = true,
+        Data = list
+    };
+}
+
+    }
+}

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SVE.Application.Contracts.Repositories.Network;
 using SVE.Application.Dtos.Network.NetworkType;
+using SVE.Application.Common;
 
 namespace SVE.API.Controllers
 {
@@ -8,49 +9,72 @@ namespace SVE.API.Controllers
     [Route("api/[controller]")]
     public class NetworkTypeController : ControllerBase
     {
-        private readonly INetworkTypeRepository _networkTypeRepository;
+        private readonly INetworkTypeRepository _repo;
 
-        public NetworkTypeController(INetworkTypeRepository networkTypeRepository)
+        public NetworkTypeController(INetworkTypeRepository repo)
         {
-            _networkTypeRepository = networkTypeRepository;
+            _repo = repo;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var result = await _networkTypeRepository.GetAllAsync();
-            return Ok(result);
+            var result = await _repo.GetAllAsync();
+            return Ok(result); 
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var result = await _networkTypeRepository.GetByIdAsync(id);
-            if (!result.Success) return NotFound(result.Message);
-            return Ok(result.Data);
+            var result = await _repo.GetByIdAsync(id);
+            return Ok(result); 
         }
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateNetworkTypeDtos dto)
         {
-            var result = await _networkTypeRepository.AddAsync(dto);
-            return Ok(result);
-        }
+            var result = await _repo.AddAsync(dto);
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] ModifyNetworkTypeDtos dto)
-        {
-            if (id != dto.Id) return BadRequest();
-            var result = await _networkTypeRepository.UpdateAsync(dto);
-            return Ok(result);
-        }
+    return Ok(new ApiResponse<bool>
+    {
+        Success = result.Success,
+        Message = result.Message,
+        Data = result.Success
+    });
+}
+
+       [HttpPut]
+public async Task<IActionResult> Update([FromBody] ModifyNetworkTypeDtos dto)
+{
+    dto.UpdateAt = DateTime.UtcNow;
+
+    var result = await _repo.UpdateAsync(dto);
+
+    return Ok(new ApiResponse<bool>
+    {
+        Success = result.Success,
+        Message = result.Message,
+        Data = result.Success
+    });
+}
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Disable(int id, [FromBody] DisableNetworkTypeDtos dto)
-        {
-            if (id != dto.Id) return BadRequest();
-            var result = await _networkTypeRepository.DeleteAsync(dto);
-            return Ok(result);
-        }
+public async Task<IActionResult> Disable(int id)
+{
+    var result = await _repo.DeleteAsync(new DisableNetworkTypeDtos
+    {
+        Id = id,
+        UpdateAt = DateTime.UtcNow
+    });
+
+    return Ok(new ApiResponse<bool>
+    {
+        Success = result.Success,
+        Message = result.Message,
+        Data = result.Success
+    });
+}
+
     }
 }
+

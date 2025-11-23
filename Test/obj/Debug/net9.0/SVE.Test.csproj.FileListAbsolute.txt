@@ -1,0 +1,6 @@
+/Users/rosse/Documents/SVE/Test/obj/Debug/net9.0/SVE.Test.csproj.AssemblyReference.cache
+/Users/rosse/Documents/SVE/Test/obj/Debug/net9.0/SVE.Test.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rosse/Documents/SVE/Test/obj/Debug/net9.0/SVE.Test.AssemblyInfoInputs.cache
+/Users/rosse/Documents/SVE/Test/obj/Debug/net9.0/SVE.Test.AssemblyInfo.cs
+/Users/rosse/Documents/SVE/Test/obj/Debug/net9.0/SVE.Test.csproj.CoreCompileInputs.cache
+/Users/rosse/Documents/SVE/Test/obj/Debug/net9.0/SVE.Test.sourcelink.json

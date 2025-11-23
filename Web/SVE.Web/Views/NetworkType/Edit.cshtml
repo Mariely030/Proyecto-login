@@ -5,6 +5,7 @@
 <form asp-action="Edit" method="post">
 
     <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="UpdateAt" value="@DateTime.UtcNow" />
 
     <div class="form-group">
         <label asp-for="Nombre"></label>

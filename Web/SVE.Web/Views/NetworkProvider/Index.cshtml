@@ -17,6 +17,7 @@
             <th>Nombre</th>
             <th>Descripcion</th>
             <th>Fecha Creación</th>
+            <th>Fecha Actualización</th> 
             <th>Acciones</th>
         </tr>
     </thead>
@@ -28,6 +29,8 @@
                 <td>@item.Nombre</td>
                 <td>@item.NetworkTypeName</td>
                 <td>@item.CreateAt?.ToString("yyyy-MM-dd")</td>
+                <td>@(item.UpdateAt?.ToString("yyyy-MM-dd"))</td>
+
 
                 <td>
                     <a asp-controller="NetworkProvider" asp-action="Edit" asp-route-id="@item.Id"

@@ -1,96 +1,80 @@
 using Microsoft.AspNetCore.Mvc;
-using SVE.Application.Contracts.Services.Network;
 using SVE.Application.Dtos.Network.NetworkType;
 
-namespace SVE.Web.Controllers
+public class NetworkTypeController : Controller
 {
-    public class NetworkTypeController : Controller
+    private readonly INetworkTypeApi _networkTypeApi;
+
+    public NetworkTypeController(INetworkTypeApi networkTypeApi)
     {
-        private readonly INetworkTypeService _service;
+        _networkTypeApi = networkTypeApi;
+    }
 
-        public NetworkTypeController(INetworkTypeService service)
-        {
-            _service = service;
-        }
+    public async Task<IActionResult> Index()
+    {
+        var result = await _networkTypeApi.GetAllAsync();
+        return View(result.Data ?? new List<GetNetworkTypeDtos>());
+    }
 
-        public async Task<IActionResult> Index()
-        {
-            var result = await _service.GetAllAsync();
+    public IActionResult Create() => View();
 
-            var list = result.Data as List<GetNetworkTypeDtos>;
-
-            return View(result.Data as List<GetNetworkTypeDtos>);
-        }
-
-        public IActionResult Create() => View();
-
-        [HttpPost]
-        public async Task<IActionResult> Create(CreateNetworkTypeDtos model)
-        {
-            if (!ModelState.IsValid)
-                return View(model);
-
-            await _service.AddAsync(model);
-            return RedirectToAction(nameof(Index));
-        }
-
-        public async Task<IActionResult> Edit(int id)
-        {
-            var result = await _service.GetByIdAsync(id);
-
-            if (!result.Success || result.Data == null)
-                return NotFound();
-
-            var dto = result.Data as GetNetworkTypeDtos;
-
-            if (dto == null)
-                return NotFound();
-
-            var model = new ModifyNetworkTypeDtos
-            {
-                Id = dto.Id,
-                Nombre = dto.Nombre,
-                Descripcion = dto.Descripcion,
-                UpdateAt = DateTime.UtcNow
-            };
-
+    [HttpPost]
+    public async Task<IActionResult> Create(CreateNetworkTypeDtos model)
+    {
+        if (!ModelState.IsValid)
             return View(model);
-        }
 
-        [HttpPost]
-        public async Task<IActionResult> Edit(ModifyNetworkTypeDtos model)
+        await _networkTypeApi.CreateAsync(model);
+        return RedirectToAction(nameof(Index));
+    }
+
+    public async Task<IActionResult> Edit(int id)
+    {
+        var result = await _networkTypeApi.GetByIdAsync(id);
+
+        if (result.Data == null)
+            return NotFound();
+
+        var dto = result.Data;
+
+        var model = new ModifyNetworkTypeDtos
         {
-            if (!ModelState.IsValid)
-                return View(model);
+            Id = dto.Id,
+            Nombre = dto.Nombre,
+            Descripcion = dto.Descripcion,
+            UpdateAt = DateTime.UtcNow
+        };
 
-            await _service.UpdateAsync(model);
+        return View(model);
+    }
 
-            return RedirectToAction(nameof(Index));
-        }
+    [HttpPost]
+    public async Task<IActionResult> Edit(ModifyNetworkTypeDtos model)
+    {
+        if (!ModelState.IsValid)
+            return View(model);
 
-        public async Task<IActionResult> Disable(int id)
-        {
-            var model = new DisableNetworkTypeDtos
-            {
-                Id = id,
-                UpdateAt = DateTime.UtcNow
-            };
+        model.UpdateAt = DateTime.UtcNow;
 
-            await _service.DeleteAsync(model);
+        await _networkTypeApi.UpdateAsync(model);
 
-            return RedirectToAction(nameof(Index));
-        }
+        return RedirectToAction(nameof(Index));
+    }
 
-        public async Task<IActionResult> Details(int id)
-{
-    var result = await _service.GetByIdAsync(id);
+    public async Task<IActionResult> Disable(int id)
+    {
+        await _networkTypeApi.DisableAsync(id);
+        return RedirectToAction(nameof(Index));
+    }
 
-    if (!result.Success || result.Data is not GetNetworkTypeDtos data)
-        return NotFound();
+    public async Task<IActionResult> Details(int id)
+    {
+        var result = await _networkTypeApi.GetByIdAsync(id);
 
-    return View(data);
-}
+        if (result.Data == null)
+            return NotFound();
 
-
+        return View(result.Data);
     }
 }
+

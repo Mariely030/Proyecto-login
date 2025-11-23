@@ -6,7 +6,7 @@ namespace SVE.Domain.Entities.Network
         public string Nombre { get; set; } = null!;
         public string? Descripcion { get; set; }
         public DateTime CreateAt { get; set; } = DateTime.UtcNow;
-        public DateTime? UpdateAt { get; set; }
+        public DateTime? UpdateAt { get; set; } = DateTime.UtcNow;
         public bool Estado { get; set; } = true;
     }
 }

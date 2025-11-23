@@ -10,6 +10,8 @@
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Azure.Core.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Azure.Identity.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/BouncyCastle.Cryptography.dll
+/Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Castle.Core.dll
+/Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/FluentAssertions.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Google.Protobuf.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/K4os.Compression.LZ4.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/K4os.Compression.LZ4.Streams.dll
@@ -39,6 +41,7 @@
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Microsoft.OpenApi.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Microsoft.SqlServer.Server.dll
+/Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Moq.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/MySql.Data.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/MySqlConnector.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/Pomelo.EntityFrameworkCore.MySql.dll
@@ -54,6 +57,10 @@
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/System.Security.Cryptography.ProtectedData.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/System.Security.Permissions.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/System.Windows.Extensions.dll
+/Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/xunit.abstractions.dll
+/Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/xunit.assert.dll
+/Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/xunit.core.dll
+/Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/xunit.execution.dotnet.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/ZstdSharp.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/cs/Microsoft.Data.SqlClient.resources.dll
 /Users/rosse/Documents/SVE/Web/SVE.Web/bin/Debug/net9.0/de/Microsoft.Data.SqlClient.resources.dll

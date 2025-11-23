@@ -413,6 +413,9 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+              "/Users/rosse/Documents/SVE/Application/SVE.Application/SVE.Application.csproj": {
+                "projectPath": "/Users/rosse/Documents/SVE/Application/SVE.Application/SVE.Application.csproj"
+              },
               "/Users/rosse/Documents/SVE/IOC/SVE.IOC/SVE.IOC.csproj": {
                 "projectPath": "/Users/rosse/Documents/SVE/IOC/SVE.IOC/SVE.IOC.csproj"
               }
@@ -435,6 +438,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[8.8.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -442,6 +453,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[10.0.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
             }
           },
           "imports": [

@@ -2,11 +2,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\IOC\SVE.IOC\SVE.IOC.csproj" />
+    <ProjectReference Include="..\..\Application\SVE.Application\SVE.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="8.8.0" />
+    <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
   </ItemGroup>
 
   <PropertyGroup>
