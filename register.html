@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+
+ <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center; /* centra horizontal */
+            align-items: center;     /* centra vertical */
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #mensaje {
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+<div style="text-align:center; margin-top:100px;">
+    <h2>Registro de Usuario</h2>
+
+    <input type="text" id="newUser" placeholder="Usuario"><br><br>
+    <input type="password" id="newPass" placeholder="Contraseña"><br><br>
+
+    <button onclick="register()">Registrar</button>
+    <p id="mensaje"></p>
+
+
+</div>
+
+<script>
+function register() {
+    const user = document.getElementById("newUser").value;
+    const pass = document.getElementById("newPass").value;
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const exists = users.find(u => u.user === user);
+
+    if (exists) {
+        document.getElementById("mensaje").innerText = "Usuario ya existe";
+        return;
+    }
+
+    users.push({ user, pass });
+    localStorage.setItem("users", JSON.stringify(users));
+
+    document.getElementById("mensaje").innerText = "Usuario registrado";
+
+    setTimeout(() => {
+    window.location.href = "index.html";
+}, 1500);
+
+}
+</script>
+
+</body>
+</html>

@@ -45,7 +45,7 @@ public class VentanaSignup extends JFrame {
     		String telefono = telefonoField.getText();
     		String correo = correoField.getText();
     		String contraseña = new String (contraseñaField.getPassword());
-    		String confirmacion = corfimacionContraseñaField.getText();
+    		String confirmacion =  new String(corfimacionContraseñaField.getPassword());
     		
     		if (nombre.isEmpty() || apellido.isEmpty() || usuario.isEmpty() || telefono.isEmpty() || correo.isEmpty() || 
         		    contraseña.isEmpty() || confirmacion.isEmpty())  {
